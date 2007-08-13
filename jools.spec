@@ -4,7 +4,8 @@ Version: 0.20
 Release: %mkrel 5
 Url:		http://www.eecs.umich.edu/~pelzlpj/jools/
 Source0:	%{name}-%{version}.tar.bz2
-Source1:	%{name}-%{version}-sys.patch.bz2
+Patch0:	%{name}-%{version}-sys.patch
+Patch1:	%{name}-%{version}-sharegames.patch
 #Source2:	%{name}-48.png
 #Source3:	%{name}-32.png
 #Source4:	%{name}-16.png
@@ -24,7 +25,8 @@ Jools features nifty 3D rendered graphics.
 
 %prep
 %setup -q
-perl -pi -e "s,share,share/games,g" setup.py
+%patch0 -p1
+%patch1 -p1
 
 %build
 
@@ -38,8 +40,6 @@ find $RPM_BUILD_ROOT%{_gamesdatadir}/%{name} -name '.arch-ids' -o -name '.placeh
 install -d -m 755 $RPM_BUILD_ROOT%{_gamesbindir}
 mv $RPM_BUILD_ROOT%{_bindir}/%{name} $RPM_BUILD_ROOT%{_gamesbindir}
 rmdir $RPM_BUILD_ROOT%{_bindir}
-
-(cd $RPM_BUILD_ROOT%{_libdir}/python%pyver/site-packages/%{name} && bzip2 -dc %{SOURCE1} | patch -p4)
 
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
