@@ -41,9 +41,18 @@ install -d -m 755 $RPM_BUILD_ROOT%{_gamesbindir}
 mv $RPM_BUILD_ROOT%{_bindir}/%{name} $RPM_BUILD_ROOT%{_gamesbindir}
 rmdir $RPM_BUILD_ROOT%{_bindir}
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%{name}): command="%{_gamesbindir}/%{name}" icon="%{name}.png" section="More Applications/Games/Puzzles" title="Jools" longtitle="Graphical puzzle game" needs="x11"
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Jools
+Comment=Graphical puzzle game
+Exec=%{_gamesbindir}/%{name} 
+Icon=%{name}
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=X-MandrivaLinux-MoreApplications-Games-Puzzles;
 EOF
 
 %clean
@@ -62,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_puresitedir}/%{name}*
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 #%{_liconsdir}/%{name}.png
 #%{_iconsdir}/%{name}.png
 #%{_miconsdir}/%{name}.png
