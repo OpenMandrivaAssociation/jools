@@ -59,8 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,755)
 %doc COPYING ChangeLog README doc/manual.html
 %{_gamesbindir}/%{name}
-%dir %{_libdir}/python%pyver/site-packages/%{name}
-%{_libdir}/python%pyver/site-packages/%{name}/*
+%{py_puresitedir}/%{name}*
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
 %{_menudir}/%{name}
