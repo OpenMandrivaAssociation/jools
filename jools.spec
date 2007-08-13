@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,755)
-%doc COPYING ChangeLog README doc/manual.html
+%doc COPYING ChangeLog README doc/manual.html doc/manual.tex doc/detonate.txt doc/POINTS doc/TODO
 %{_gamesbindir}/%{name}
 %{py_puresitedir}/%{name}*
 %dir %{_gamesdatadir}/%{name}
