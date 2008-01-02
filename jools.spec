@@ -11,6 +11,7 @@ Patch1:	%{name}-%{version}-sharegames.patch
 #Source4:	%{name}-16.png
 Group:		Games/Puzzles
 License:	GPL
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  python-devel
 Requires:	pygame
 BuildArch:      noarch
