@@ -1,7 +1,7 @@
 Name:		jools
 Summary:	Graphical puzzle game
 Version: 0.20
-Release: %mkrel 8
+Release: %mkrel 9
 Url:		http://www.eecs.umich.edu/~pelzlpj/jools/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:	%{name}-%{version}-sys.patch
