@@ -82,3 +82,65 @@ rm -rf $RPM_BUILD_ROOT
 %{_liconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
+
+
+%changelog
+* Fri Nov 12 2010 Bogdano Arendartchuk <bogdano@mandriva.com> 0.20-11mdv2011.0
++ Revision: 597012
+- rebuild for python 2.7
+
+* Sat May 16 2009 Samuel Verschelde <stormi@mandriva.org> 0.20-10mdv2010.0
++ Revision: 376445
+- fix desktop file
+- fix license
+- add icons
+
+* Tue Jan 06 2009 Funda Wang <fwang@mandriva.org> 0.20-9mdv2009.1
++ Revision: 325672
+- rebuild
+
+* Fri Jul 25 2008 Thierry Vignaud <tv@mandriva.org> 0.20-8mdv2009.0
++ Revision: 247418
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 0.20-6mdv2008.1
++ Revision: 140829
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+* Mon Aug 13 2007 Bogdano Arendartchuk <bogdano@mandriva.com> 0.20-6mdv2008.0
++ Revision: 62665
+- use the new menu system
+- added missing docs to the package
+- exploded patches
+- moved path fixes to separated patches, and
+- apply them properly
+- imported jools, from 2007.0
+
+
+* Mon Apr 24 2006 Nicolas Lécureuil <neoclust@mandriva.org> 0.20-5mdk
+- Add BuildRequires
+- use mkrel
+
+* Sun Dec 05 2004 Michael Scherer <misc@mandrake.org> 0.20-4mdk
+- Rebuild for new python
+
+* Sat Dec 04 2004 Michael Scherer <misc@mandrake.org> 0.20-3mdk 
+- correct menu
+- use a macro for python version
+- use noarch
+
+* Tue May  4 2004 Olivier Blin <blino@mandrake.org> 0.20-2mdk
+- modify setup.py to install directly in share/games
+- use --root option of setup.py instead of some dark power
+  (GProg poutre more than AEI)
+
+* Mon May  3 2004 Olivier Blin <blino@mandrake.org> 0.20-1mdk
+- initial release
+
